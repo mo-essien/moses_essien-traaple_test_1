@@ -1,0 +1,53 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Jollof",
+      "price": 10,
+      "description": "a popular, flavorful, one-pot dish from West Africa that's typically made with long-grain rice, tomatoes, onions, chilies, and spices. The dish can also include other vegetables and/or meat, and the ingredients and preparation methods vary by region. Jollof rice can be spicy, acidic, sweet, and savory, with hints of smoke from paprika.",
+      "image": "https://images.unsplash.com/photo-1665332195309-9d75071138f0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 2,
+      "name": "Fried Rice",
+      "price": 9,
+      "description": "Fried rice is a dish of cooked rice that's stir-fried with other ingredients in a wok or frying pan. It's often made with soy sauce, eggs, vegetables, and meat or seafood, but can be customized with whatever's on hand. Fried rice can be eaten by itself or as a side dish, and it's great for using up leftovers.",
+      "image": "https://images.unsplash.com/photo-1696340034863-f98636525e9c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 3,
+      "name": "Yam Fries",
+      "price": 9,
+      "description": "They are crunchy on the outside, soft on the inside and a great healthy substitute for regular 'French fries'. Just add a chipotle mayo, and there is no such snack that beats yams",
+      "image": "https://images.unsplash.com/photo-1599975744981-48d63c8f38af?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 4,
+      "name": "Potato Fries",
+      "price": 9,
+      "description": "French fries are made from potatoes that have been cut into thin strips, washed briefly in cold water, partly dried to remove surface moisture and deep fried in vegetable oil to a light golden colour.",
+      "image": "https://images.unsplash.com/photo-1647490029508-eb014efb3805?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 5,
+      "name": "Burger",
+      "price": 8,
+      "description": "A patty of ground meat that's grilled and placed between two halves of a bun or roll. The meat is usually beef, but can also be turkey, lamb, or tofu.",
+      "image": "https://images.unsplash.com/photo-1521305916504-4a1121188589?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 6,
+      "name": "Pizza Margherita",
+      "price": 8.99,
+      "description": "Classic pizza with tomato sauce, mozzarella, and basil.",
+      "image": "https://images.unsplash.com/photo-1702716059239-385baacdabdc?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 7,
+      "name": "Sushi Platter",
+      "price": 14.99,
+      "description": "Assorted sushi with fresh fish and vegetables.",
+      "image": "https://images.unsplash.com/photo-1677632227496-be77ffe5e13d?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }    
+  ]
+}
