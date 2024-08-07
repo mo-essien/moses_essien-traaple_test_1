@@ -1,6 +1,6 @@
 # Traaple Test 1
 
-A food ordering mobile app.
+By Moses Essien, a food ordering mobile app.
 
 ## Table of Contents
 
