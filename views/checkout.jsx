@@ -23,7 +23,11 @@ export default function CheckoutScreen() {
       />
       <View style={styles.totalContainer}>
         <Text style={styles.totalText}>Total: ${total.toFixed(2)}</Text>
-        <Button title="Place Order" onPress={() => alert('Order placed successfully!')} />
+        <Button title="Place Order" onPress={() => {
+          alert('Order placed successfully!')
+          let interval = setInterval(() => navigation.navigate('Main'), 500)
+          return clearInterval(interval)
+        }} />
       </View>
     </View>
   );

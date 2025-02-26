@@ -12,18 +12,23 @@ export default function HomeScreen({ navigation }) {
       .catch(error => console.error(error));
   }, []);
 
-  const filteredFoodItems = menu.filter(item =>
+  const filteredFoodItems = menu?.filter(item =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.searchBar}
-        placeholder="Search food items..."
-        value={searchQuery}
-        onChangeText={setSearchQuery}
-      />
+      <View style={styles.navBar}>
+        <TextInput
+          style={styles.searchBar}
+          placeholder="Search food items..."
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+        />
+        <TouchableOpacity style={styles.cartButton} onPress={() => navigation.navigate('Cart')}>
+          <Text style={styles.cartText}>Cart</Text>
+        </TouchableOpacity>
+      </View>
       <FlatList
         data={filteredFoodItems}
         keyExtractor={item => item.id.toString()}
@@ -47,14 +52,33 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
     padding: 16,
   },
+  navBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
   searchBar: {
-    height: 40,
+    flex: 1,
+    height: 50,
     borderColor: '#ddd',
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 16,
-    paddingVertical: 25,
-    marginBottom: 16,
+    marginRight: 10,
+  },
+  cartButton: {
+    backgroundColor: '#0000FF',
+    height: 50,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+  },
+  cartText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   itemContainer: {
     flexDirection: 'row',

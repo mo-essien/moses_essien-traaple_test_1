@@ -16,8 +16,7 @@ By Moses Essien, a food ordering mobile app.
 To get a local copy up and running follow these simple steps:
 
 clone the repo
-npm install
-install Expo CLI if you haven't using "npm install -g expo-cli" command
+run "npm install" command to install the packages (internet connection is required)
 
 Running the App
 The expo app can be run multiple platforms.

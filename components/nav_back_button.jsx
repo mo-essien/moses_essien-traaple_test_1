@@ -1,11 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 export default function NavBackButton({ navigation }) {
   return (
     <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
-      <Ionicons name="arrow-back" size={24} color="#6200ea" />
       <Text style={styles.text}>Back</Text>
     </TouchableOpacity>
   );

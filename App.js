@@ -3,43 +3,58 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-// components
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import HomeScreen from './views/home';
 import FoodDetailsScreen from './views/food_details';
 import CartScreen from './views/cart';
 import CheckoutScreen from './views/checkout';
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
-function TabNavigator() {
+const Layout = ({ title, children }) => {
   return (
-    <Tab.Navigator screenOptions={{
-      headerShown: false,
-      tabBarShowLabel: true,
-      tabBarLabelStyle: {
-        fontSize: 16,
-      },
-      tabBarIcon: () => null,
-    }}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Cart" component={CartScreen} />
-    </Tab.Navigator>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        {children}
+      </ScrollView>
+    </View>
   );
-}
+};
+
+const Home = ({ navigation }) => (
+  <View style={styles.container}>
+    <HomeScreen navigation={navigation} />
+  </View>
+);
+
+const Cart = ({ navigation }) => (
+  <Layout title="Cart">
+    <CartScreen navigation={navigation} />
+  </Layout>
+);
 
 export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Main" component={TabNavigator} />
+          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="FoodDetails" component={FoodDetailsScreen} />
+          <Stack.Screen name="Cart" component={Cart} options={{ headerShown: false }} />
           <Stack.Screen name="Checkout" component={CheckoutScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f8f8f8',
+  },
+  scrollContent: {
+    flexGrow: 1,
+    padding: 16,
+  },
+});
