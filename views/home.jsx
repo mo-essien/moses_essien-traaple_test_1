@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, TextInput, Image, TouchableOpacity } from 'react-native';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFoodItems } from '../redux/foodSlice';
 
 export default function HomeScreen({ navigation }) {
-  const [menu, setMenu] = useState([]);
+  const dispatch = useDispatch()
+  const menu = useSelector(state => state.food.items);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/menu')
-      .then(response => setMenu(response.data))
-      .catch(error => console.error(error));
+    dispatch(fetchFoodItems())
   }, []);
 
   const filteredFoodItems = menu?.filter(item =>

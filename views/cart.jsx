@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, FlatList, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItemFromCart } from '../redux/cartReducer';
+import { removeFromCart } from '../redux/cartSlice';
 import NavBackButton from '../components/nav_back_button';
 
 export default function CartScreen({ navigation }) {
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
   const total = cart.reduce((sum, item) => sum + item.price, 0);
@@ -20,7 +20,7 @@ export default function CartScreen({ navigation }) {
           <View style={styles.itemContainer}>
             <Text style={styles.itemName}>{item.name}</Text>
             <Text style={styles.itemPrice}>${item.price}</Text>
-            <TouchableOpacity style={styles.deleteButton} onPress={() => dispatch(removeItemFromCart(item.id))}>
+            <TouchableOpacity style={styles.deleteButton} onPress={() => dispatch(removeFromCart(item.id))}>
               <Text style={styles.removeItem}>Remove</Text>
             </TouchableOpacity>
           </View>

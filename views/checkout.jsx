@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import NavBackButton from '../components/nav_back_button';
 
 export default function CheckoutScreen() {
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart.items);
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
