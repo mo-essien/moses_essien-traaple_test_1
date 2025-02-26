@@ -1,4 +1,3 @@
-// screens/CheckoutScreen.js
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
