@@ -1,10 +1,12 @@
 // screens/CheckoutScreen.js
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavBackButton from '../components/nav_back_button';
+import { clearCart } from '../redux/cartSlice';
 
 export default function CheckoutScreen() {
+  const dispatch = useDispatch()
   const cart = useSelector(state => state.cart.items);
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
@@ -24,9 +26,8 @@ export default function CheckoutScreen() {
       <View style={styles.totalContainer}>
         <Text style={styles.totalText}>Total: ${total.toFixed(2)}</Text>
         <Button title="Place Order" onPress={() => {
+          dispatch(clearCart())
           alert('Order placed successfully!')
-          let interval = setInterval(() => navigation.navigate('Main'), 500)
-          return clearInterval(interval)
         }} />
       </View>
     </View>
