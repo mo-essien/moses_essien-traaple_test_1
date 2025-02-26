@@ -21,6 +21,8 @@ run "npm install" command to install the packages (internet connection is requir
 Running the App
 The expo app can be run multiple platforms.
 
+First start the backend with json-server using the command "json-server --watch api/db.json"
+
 To start the Expo server run "npm start or expo start" command, the expo go mobile app is required for this to scan the QR code
 
 To run the app on your preferred device or simulator:
@@ -34,3 +36,4 @@ The expo app can be run on the web as well using the command "npm run web"
 - Expo
 - Redux
 - React Navigation
+- JSON-Server
